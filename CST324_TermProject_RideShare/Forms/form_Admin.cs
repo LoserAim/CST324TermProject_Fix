@@ -21,7 +21,7 @@ namespace CST324_TermProject_RideShare
         {
             InitializeComponent();
             _dbContext = new OIT_RideShare();
-            
+
             updateLists();
             current_request = null;
             current_User = null;
@@ -81,12 +81,12 @@ namespace CST324_TermProject_RideShare
 
         private void listb_Users_MouseClick(object sender, MouseEventArgs e)
         {
-            
+
             var user = _dbContext.Users.ToList().FirstOrDefault(g => g.UserID.Equals(Convert.ToInt32(listb_Users.GetItemText(listb_Users.SelectedItem))));
             current_User = user;
             updateLists();
             UpdateUserData();
-            
+
         }
 
         private void btn_Finish_Click(object sender, EventArgs e)
@@ -116,6 +116,15 @@ namespace CST324_TermProject_RideShare
             Form adminupdate = new form_admin_add_user();
             adminupdate.Show();
         }
+
+
+
+        private void btn_Requests_Update_Click(object sender, EventArgs e)
+        {
+            Form Requestupdate = new form_update_request(current_request);
+            Requestupdate.Show();
+            //REEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
+          }
 
         private void btn_Rider_Delete_Click(object sender, EventArgs e)
         {

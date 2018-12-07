@@ -11,13 +11,13 @@ using System.Windows.Forms;
 
 namespace CST324_TermProject_RideShare.Forms
 {
-    public partial class Form1 : Form
+    public partial class form_update_request : Form
     {
         RideRequest current;
         private OIT_RideShare _dbContext;
         string willChange;
 
-        public Form1(RideRequest ride)
+        public form_update_request(RideRequest ride)
         {
             InitializeComponent();
             current = ride;
@@ -27,7 +27,12 @@ namespace CST324_TermProject_RideShare.Forms
 
         public void UpdateRideRequestData()
         {
+            
+            requestUpdatetb1.Text = "RequestID: " + current.RideRequestID.ToString()
+                                + Environment.NewLine + "Location: " + "Not working..."
+                                + Environment.NewLine + "Destination: " + current.Destination.ToString()
 
+                                + Environment.NewLine + "Desired Time: " + current.Rider_Desired_Time.ToString(); ;
         }
 
         private void btn_Finish2_Click(object sender, EventArgs e)
