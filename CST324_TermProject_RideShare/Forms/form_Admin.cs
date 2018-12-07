@@ -21,22 +21,28 @@ namespace CST324_TermProject_RideShare
         {
             InitializeComponent();
             _dbContext = new OIT_RideShare();
-            var list = _dbContext.Users.ToList();
-            foreach(var u in list)
-            {
-                listb_Users.Items.Add(u.UserID);
-            }
-            var temp = _dbContext.RideRequests.ToList();
             
-            foreach(var u in temp)
-            {
-                listb_Requests.Items.Add(u.RideRequestID);
-            }
+            updateLists();
             current_request = new RideRequest();
             current_User = null;
 
         }
+        public void updateLists()
+        {
+            var list = _dbContext.Users.ToList();
+            listb_Requests.Items.Clear();
+            listb_Users.Items.Clear();
+            foreach (var u in list)
+            {
+                listb_Users.Items.Add(u.UserID);
+            }
+            var temp = _dbContext.RideRequests.ToList();
 
+            foreach (var u in temp)
+            {
+                listb_Requests.Items.Add(u.RideRequestID);
+            }
+        }
 
         public void UpdateUserData()
         {
@@ -78,7 +84,9 @@ namespace CST324_TermProject_RideShare
             
             var user = _dbContext.Users.ToList().FirstOrDefault(g => g.UserID.Equals(Convert.ToInt32(listb_Users.GetItemText(listb_Users.SelectedItem))));
             current_User = user;
+            updateLists();
             UpdateUserData();
+            
         }
 
         private void btn_Finish_Click(object sender, EventArgs e)
@@ -88,6 +96,7 @@ namespace CST324_TermProject_RideShare
 
         private void btn_Rider_Update_Click(object sender, EventArgs e)
         {
+            updateLists();
             if (current_User != null)
             {
                 Form adminupdate = new form_Admin_Update(current_User);
@@ -101,8 +110,30 @@ namespace CST324_TermProject_RideShare
 
         private void btn_Rider_Add_Click(object sender, EventArgs e)
         {
+            updateLists();
             Form adminupdate = new form_admin_add_user();
             adminupdate.Show();
+        }
+
+        private void btn_Rider_Delete_Click(object sender, EventArgs e)
+        {
+            updateLists();
+            if (current_User != null)
+            {
+                var confirmResult = MessageBox.Show("Are you sure to delete this item ??",
+                                     "Confirm Delete!!",
+                                     MessageBoxButtons.YesNo);
+                if (confirmResult == DialogResult.Yes)
+                {
+                    _dbContext.Users.Remove(current_User);
+                    _dbContext.SaveChanges();
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("No User has been selected!");
+            }
         }
     }
 }
