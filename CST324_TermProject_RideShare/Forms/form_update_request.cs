@@ -16,5 +16,11 @@ namespace CST324_TermProject_RideShare.Forms
         {
             InitializeComponent();
         }
+
+        private void btn_Finish2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+
+        }
     }
 }
