@@ -107,7 +107,9 @@ namespace CST324_TermProject_RideShare
 
         private void btn_Requests_Update_Click(object sender, EventArgs e)
         {
-            //REEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
+            Form Requestupdate = new form_update_request(current_request);
+            Requestupdate.Show();
+
         }
     }
 }

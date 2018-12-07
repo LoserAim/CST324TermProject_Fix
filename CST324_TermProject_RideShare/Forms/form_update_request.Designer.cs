@@ -1,6 +1,6 @@
 ﻿namespace CST324_TermProject_RideShare.Forms
 {
-    partial class Form1
+    partial class form_update_request
     {
         /// <summary>
         /// Required designer variable.
