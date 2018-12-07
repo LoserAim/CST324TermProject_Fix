@@ -52,6 +52,7 @@
             this.tb_Location.Name = "tb_Location";
             this.tb_Location.Size = new System.Drawing.Size(165, 20);
             this.tb_Location.TabIndex = 0;
+            this.tb_Location.TextChanged += new System.EventHandler(this.tb_Location_TextChanged);
             // 
             // tb_Admin
             // 
@@ -59,6 +60,7 @@
             this.tb_Admin.Name = "tb_Admin";
             this.tb_Admin.Size = new System.Drawing.Size(165, 20);
             this.tb_Admin.TabIndex = 1;
+            this.tb_Admin.TextChanged += new System.EventHandler(this.tb_Admin_TextChanged);
             // 
             // tb_DriverID
             // 
@@ -74,6 +76,7 @@
             this.tb_RiderID.Name = "tb_RiderID";
             this.tb_RiderID.Size = new System.Drawing.Size(165, 20);
             this.tb_RiderID.TabIndex = 3;
+            this.tb_RiderID.TextChanged += new System.EventHandler(this.tb_RiderID_TextChanged);
             // 
             // lb_Location
             // 
@@ -83,6 +86,7 @@
             this.lb_Location.Size = new System.Drawing.Size(48, 13);
             this.lb_Location.TabIndex = 5;
             this.lb_Location.Text = "Location";
+            this.lb_Location.Click += new System.EventHandler(this.lb_Location_Click);
             // 
             // lb_Admin
             // 
@@ -92,6 +96,7 @@
             this.lb_Admin.Size = new System.Drawing.Size(36, 13);
             this.lb_Admin.TabIndex = 6;
             this.lb_Admin.Text = "Admin";
+            this.lb_Admin.Click += new System.EventHandler(this.lb_Admin_Click);
             // 
             // lb_driverID
             // 
@@ -101,6 +106,7 @@
             this.lb_driverID.Size = new System.Drawing.Size(46, 13);
             this.lb_driverID.TabIndex = 7;
             this.lb_driverID.Text = "DriverID";
+            this.lb_driverID.Click += new System.EventHandler(this.lb_driverID_Click);
             // 
             // lb_RiderID
             // 
@@ -110,6 +116,7 @@
             this.lb_RiderID.Size = new System.Drawing.Size(43, 13);
             this.lb_RiderID.TabIndex = 8;
             this.lb_RiderID.Text = "RiderID";
+            this.lb_RiderID.Click += new System.EventHandler(this.lb_RiderID_Click);
             // 
             // btn_add
             // 
@@ -139,6 +146,7 @@
             this.lb_VehicleType.Size = new System.Drawing.Size(66, 13);
             this.lb_VehicleType.TabIndex = 23;
             this.lb_VehicleType.Text = "VehicleType";
+            this.lb_VehicleType.Click += new System.EventHandler(this.lb_VehicleType_Click);
             // 
             // lb_LicensePlate
             // 
@@ -148,6 +156,7 @@
             this.lb_LicensePlate.Size = new System.Drawing.Size(68, 13);
             this.lb_LicensePlate.TabIndex = 22;
             this.lb_LicensePlate.Text = "LicensePlate";
+            this.lb_LicensePlate.Click += new System.EventHandler(this.lb_LicensePlate_Click);
             // 
             // lb_FirstName
             // 
@@ -157,6 +166,7 @@
             this.lb_FirstName.Size = new System.Drawing.Size(52, 13);
             this.lb_FirstName.TabIndex = 21;
             this.lb_FirstName.Text = "Firstname";
+            this.lb_FirstName.Click += new System.EventHandler(this.lb_FirstName_Click);
             // 
             // tb_VehicleType
             // 
@@ -164,6 +174,7 @@
             this.tb_VehicleType.Name = "tb_VehicleType";
             this.tb_VehicleType.Size = new System.Drawing.Size(165, 20);
             this.tb_VehicleType.TabIndex = 20;
+            this.tb_VehicleType.TextChanged += new System.EventHandler(this.tb_VehicleType_TextChanged);
             // 
             // tb_LicensePlate
             // 
@@ -171,6 +182,7 @@
             this.tb_LicensePlate.Name = "tb_LicensePlate";
             this.tb_LicensePlate.Size = new System.Drawing.Size(165, 20);
             this.tb_LicensePlate.TabIndex = 19;
+            this.tb_LicensePlate.TextChanged += new System.EventHandler(this.tb_LicensePlate_TextChanged);
             // 
             // tb_FirstName
             // 
@@ -178,6 +190,7 @@
             this.tb_FirstName.Name = "tb_FirstName";
             this.tb_FirstName.Size = new System.Drawing.Size(165, 20);
             this.tb_FirstName.TabIndex = 18;
+            this.tb_FirstName.TextChanged += new System.EventHandler(this.tb_FirstName_TextChanged);
             // 
             // form_admin_add_user
             // 
