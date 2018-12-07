@@ -115,6 +115,11 @@ namespace CST324_TermProject_RideShare
             adminupdate.Show();
         }
 
+
+        private void btn_Requests_Update_Click(object sender, EventArgs e)
+        {
+            //REEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
+
         private void btn_Rider_Delete_Click(object sender, EventArgs e)
         {
             updateLists();
@@ -134,6 +139,7 @@ namespace CST324_TermProject_RideShare
             {
                 MessageBox.Show("No User has been selected!");
             }
+
         }
     }
 }
