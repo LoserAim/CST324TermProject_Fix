@@ -87,6 +87,7 @@
             this.btn_Rider_Delete.TabIndex = 4;
             this.btn_Rider_Delete.Text = "Delete";
             this.btn_Rider_Delete.UseVisualStyleBackColor = true;
+            this.btn_Rider_Delete.Click += new System.EventHandler(this.btn_Rider_Delete_Click);
             // 
             // btn_Rider_Add
             // 
