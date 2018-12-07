@@ -40,21 +40,12 @@ namespace CST324_TermProject_RideShare.Forms
             {
                 case "userid":
                     tochange.UserID = Convert.ToInt32(tb_UpdateTo.Text);
-                    _dbContext.SaveChanges();
-                    MessageBox.Show("Successfully Updated Database!");
-
                     break;
                 case "location":
                     tochange.Location = tb_UpdateTo.Text;
-                    _dbContext.SaveChanges();
-                    MessageBox.Show("Successfully Updated Database!");
-
                     break;
                 case "admin":
                     tochange.Admin = Convert.ToInt32(tb_UpdateTo.Text);
-                    _dbContext.SaveChanges();
-                    MessageBox.Show("Successfully Updated Database!");
-
                     break;
                 case "riderid":
                     var ifexist = _dbContext.Riders.ToList().FirstOrDefault(d => d.RiderID.Equals(current.RiderID));
@@ -62,9 +53,6 @@ namespace CST324_TermProject_RideShare.Forms
                     {
                         tochange.RiderID = Convert.ToInt32(tb_UpdateTo.Text);
                         tochange.Rider = ifexist;
-                        _dbContext.SaveChanges();
-                        MessageBox.Show("Successfully Updated Database!");
-
                     }
                     else
                     {
@@ -78,9 +66,6 @@ namespace CST324_TermProject_RideShare.Forms
                     {
                         tochange.DriverID = Convert.ToInt32(tb_UpdateTo.Text);
                         tochange.Driver = temp;
-                        _dbContext.SaveChanges();
-                        MessageBox.Show("Successfully Updated Database!");
-
                     }
                     else
                     {
@@ -89,7 +74,8 @@ namespace CST324_TermProject_RideShare.Forms
                     break;
             }
             
-            
+            _dbContext.SaveChanges();
+            MessageBox.Show("Successfully Updated Database!");
             UpdateUserData();
         }
 

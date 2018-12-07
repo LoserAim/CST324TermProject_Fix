@@ -54,8 +54,10 @@ namespace CST324_TermProject_RideShare
             var request = _dbContext.RideRequests.ToList().FirstOrDefault(g => g.RideRequestID.Equals(Convert.ToInt32(listb_Requests.GetItemText(listb_Requests.SelectedItem))));
             var rider = _dbContext.Riders.ToList().FirstOrDefault(g => g.RideRequest.Equals(Convert.ToInt32(listb_Requests.GetItemText(listb_Requests.SelectedItem))));
             var driver = _dbContext.Drivers.ToList().FirstOrDefault(g => g.RideRequests.Equals(Convert.ToInt32(listb_Requests.GetItemText(listb_Requests.SelectedItem))));
+            var user = _dbContext.Users.ToList().FirstOrDefault(g => g.RiderID.Equals(Convert.ToInt32(listb_Requests.GetItemText(listb_Requests.SelectedItem))));
             current_request = request;
             tb_Details_Requests.Text = "RequestID: " + request.RideRequestID.ToString()
+                                + Environment.NewLine + "Location: " + user.Location.ToString()
                                 + Environment.NewLine+"Destination: " + request.Destination.ToString()
                                 + Environment.NewLine+"Desired Time " + request.Rider_Desired_Time.ToString()
                                 + Environment.NewLine+"Driver ETA: " + request.Driver_ETA.ToString()
@@ -101,28 +103,6 @@ namespace CST324_TermProject_RideShare
         {
             Form adminupdate = new form_admin_add_user();
             adminupdate.Show();
-        }
-
-        private void btn_Rider_Delete_Click(object sender, EventArgs e)
-        {
-            if (current_User != null)
-            {
-                var confirmResult = MessageBox.Show("Are you sure to delete this item ??",
-                                     "Confirm Delete!!",
-                                     MessageBoxButtons.YesNo);
-                if (confirmResult == DialogResult.Yes)
-                {
-                    _dbContext.Users.Remove(current_User);
-                }
-                else
-                {
-                    // If 'No', do something here.
-                }
-            }
-            else
-            {
-                MessageBox.Show("No User has been selected!");
-            }
         }
     }
 }

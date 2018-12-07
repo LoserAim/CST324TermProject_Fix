@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace CST324_TermProject_RideShare.Forms
 {
-    public partial class form_admin_user_delete : Form
+    public partial class Form1 : Form
     {
-        public form_admin_user_delete()
+        public Form1()
         {
             InitializeComponent();
         }
