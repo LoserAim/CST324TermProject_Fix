@@ -104,5 +104,10 @@ namespace CST324_TermProject_RideShare
             Form adminupdate = new form_admin_add_user();
             adminupdate.Show();
         }
+
+        private void btn_Requests_Update_Click(object sender, EventArgs e)
+        {
+            //REEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
+        }
     }
 }

@@ -112,15 +112,15 @@
             this.requestUpdate_lb.FormattingEnabled = true;
             this.requestUpdate_lb.ItemHeight = 16;
             this.requestUpdate_lb.Items.AddRange(new object[] {
-            "UserID",
             "Location",
-            "RiderID",
-            "DriverID"});
+            "Destination",
+            "Desired Time"});
             this.requestUpdate_lb.Location = new System.Drawing.Point(86, 240);
             this.requestUpdate_lb.Margin = new System.Windows.Forms.Padding(4);
             this.requestUpdate_lb.Name = "requestUpdate_lb";
             this.requestUpdate_lb.Size = new System.Drawing.Size(148, 116);
             this.requestUpdate_lb.TabIndex = 8;
+            this.requestUpdate_lb.SelectedIndexChanged += new System.EventHandler(this.requestUpdate_lb_SelectedIndexChanged);
             // 
             // Form1
             // 
