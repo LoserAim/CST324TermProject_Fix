@@ -23,7 +23,7 @@ namespace CST324_TermProject_RideShare
             _dbContext = new OIT_RideShare();
 
             updateLists();
-            current_request = new RideRequest();
+            current_request = null;
             current_User = null;
 
         }
@@ -56,7 +56,7 @@ namespace CST324_TermProject_RideShare
 
         private void listb_Requests_MouseClick(object sender, MouseEventArgs e)
         {
-
+            
             var request = _dbContext.RideRequests.ToList().FirstOrDefault(g => g.RideRequestID.Equals(Convert.ToInt32(listb_Requests.GetItemText(listb_Requests.SelectedItem))));
             var rider = _dbContext.Riders.ToList().FirstOrDefault(g => g.RideRequest.Equals(Convert.ToInt32(listb_Requests.GetItemText(listb_Requests.SelectedItem))));
             var driver = _dbContext.Drivers.ToList().FirstOrDefault(g => g.RideRequests.Equals(Convert.ToInt32(listb_Requests.GetItemText(listb_Requests.SelectedItem))));
@@ -91,7 +91,9 @@ namespace CST324_TermProject_RideShare
 
         private void btn_Finish_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            form_register fr = new form_register();
+            fr.ShowDialog();
         }
 
         private void btn_Rider_Update_Click(object sender, EventArgs e)
@@ -116,12 +118,14 @@ namespace CST324_TermProject_RideShare
         }
 
 
+
         private void btn_Requests_Update_Click(object sender, EventArgs e)
         {
             Form Requestupdate = new form_update_request(current_request);
             Requestupdate.Show();
             //REEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
           }
+
         private void btn_Rider_Delete_Click(object sender, EventArgs e)
         {
             updateLists();
@@ -141,7 +145,34 @@ namespace CST324_TermProject_RideShare
             {
                 MessageBox.Show("No User has been selected!");
             }
+        }
 
+        private void btn_Requests_Delete_Click(object sender, EventArgs e)
+        {
+            updateLists();
+            if (current_request != null)
+            {
+                var confirmResult = MessageBox.Show("Are you sure to delete this item ??",
+                                     "Confirm Delete!!",
+                                     MessageBoxButtons.YesNo);
+                if (confirmResult == DialogResult.Yes)
+                {
+                    _dbContext.Users.Remove(current_User);
+                    _dbContext.SaveChanges();
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("No Request has been selected!");
+            }
+        }
+
+        private void btn_Requests_Add_Click(object sender, EventArgs e)
+        {
+            updateLists();
+            Form adminupdate = new form_admin_add_request();
+            adminupdate.Show();
         }
     }
 }

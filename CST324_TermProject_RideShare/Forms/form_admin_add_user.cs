@@ -132,5 +132,70 @@ namespace CST324_TermProject_RideShare.Forms
         {
             this.Close();
         }
+
+        private void lb_LicensePlate_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lb_FirstName_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tb_VehicleType_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tb_LicensePlate_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tb_FirstName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lb_VehicleType_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lb_RiderID_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lb_driverID_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lb_Admin_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lb_Location_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tb_RiderID_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tb_Admin_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tb_Location_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
